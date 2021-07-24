@@ -4,6 +4,7 @@ const app = express();
 const cors = require('cors');
 const morgan = require('morgan');
 const port = process.env.PORT;
+const database = require('./database');
 
 
 app.use(cors());
@@ -17,5 +18,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Server running at port" + port);
+    console.log("Server running at port " + port);
 });
