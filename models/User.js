@@ -21,11 +21,11 @@ const userSchema = new Schema({
     },
     createdAt: {
         type: String,
-        default: moment().format("DD/MM/YYYY") + ";" + moment.format("hh:mm:ss")
+        default: moment().format("DD/MM/YYYY") + ";" + moment().format("hh:mm:ss")
     },
     updatedAt: {
         type: String,
-        default: moment().format("DD/MM/YYYY") + ";" + moment.format("hh:mm:ss")
+        default: moment().format("DD/MM/YYYY") + ";" + moment().format("hh:mm:ss")
     }
 });
 
