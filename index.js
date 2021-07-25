@@ -11,7 +11,7 @@ const userRoutes = require('./routes/users')
 app.use(cors());
 app.use(morgan('dev'));
 
-app.use('api/users', userRoutes);
+app.use('/api/users', userRoutes);
 
 app.get('/', (req, res) => {
     return res.status(200).json({
