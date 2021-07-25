@@ -21,7 +21,26 @@ router.get('/', (req, res) => {
 })
 
 router.post('/register', [
-    check('')
-])
+    check('username').not().isEmpty().trim().escape(),
+    check('password').not().isEmpty().trim().escape(),
+
+    check('email').isEmail().normalizeEmail()
+], 
+(req, res) => {
+    const errors = validationResult(req)
+    
+    if(!errors.isEmpty())
+    {
+        return res.status(400).json({
+            status: false,
+            'errors':  errors.array()
+        });
+    }
+
+    return res.status(200).json({
+        status: true,
+        "data": req.body
+    });
+})
 
 module.exports = router;
