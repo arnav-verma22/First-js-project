@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
     )
 })
 
-router.post('/register', [
+router.post('/register', 
+[
     check('username').not().isEmpty().trim().escape(),
     check('password').not().isEmpty().trim().escape(),
 
@@ -36,6 +37,7 @@ router.post('/register', [
             'errors':  errors.array()
         });
     }
+    console.log(req.body.username);
 
     return res.status(200).json({
         status: true,
