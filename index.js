@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const port = process.env.PORT;
 const database = require('./database');
 
-const userRoutes = require('./routes/users')
+const userRoutes = require('./routes/userRoutes')
 
 app.use(cors());
 app.use(morgan('dev'));
