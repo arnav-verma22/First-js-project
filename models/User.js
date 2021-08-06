@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 const moment = require("moment");
-const userSchema = new Schema({
+var userSchema = new Schema({
     username: {
         type : String,
         required : true
@@ -30,4 +30,4 @@ const userSchema = new Schema({
 });
 
 mongoose.model("users", userSchema);
-mongoose.exports = mongoose.model("users");
+module.exports = mongoose.model("users");
