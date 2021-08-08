@@ -40,7 +40,7 @@ router.post('/register',
     //console.log(req.body.username);
 
     User.findOne({ email: req.body.email }).then(user => {
-
+        //console.log(req.body)
         // check user
         if (user) {
   
