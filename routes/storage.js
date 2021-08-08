@@ -4,13 +4,13 @@ function getProfilePicUpload()
 {
     let storage = multer.diskStorage({
         destination: (req, file, cb) => {
-            cb(null, './public/profie_pic');
+            cb(null, './public/profile_pic');
         }
     })
     return multer({
         storage: storage,
         limits: {
-            fieldSize: 1048576
+            filedSize: 1048576
         }
     }).single('profile_pic');
 }
